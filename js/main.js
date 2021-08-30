@@ -14,7 +14,7 @@ $("#music").click(function(){
 var player = document.getElementById("audio");
 play();
 function play(){
-swal("欢迎访问  情风个人介绍\n请问是否能开启音乐\n一边浏览一边听呢？", {
+swal("欢迎访问  星染的主页\n请问是否能开启音乐\n一边浏览一边听呢？", {
         buttons: {
             cancel: "开启",
             allow: "关闭"
