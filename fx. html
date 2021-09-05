@@ -1,0 +1,69 @@
+<html data-dpr="1" style="font-size: 40px;">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+
+    <meta content="yes" name="apple-touch-fullscreen">
+
+    <meta content="telephone=no,email=no" name="format-detection">
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>星染 网页集合</title>
+
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+
+    <script src="static/js/jquery.js"></script>
+
+</head>
+
+<body>
+
+    <div style="padding-top: 30px;">
+
+        <center>
+
+            <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=2471717907&spec=5">
+
+            <div class="btn">
+
+                <a><span>&nbsp 予君欢喜城，暖色浮余生&nbsp </span></a>
+
+            </div>
+
+        </center>
+
+    </div>
+
+    <div class="lz" style="margin-top: 10px;">
+
+        <center><a href="https://jhxxr.github.io/jhxnb/" target="_blank"><button class="button" style="padding-left: 64px;padding-right: 64px;">博客</button></a>
+
+        <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=2471717907@qq.com" target="_blank"><button class="button drive white" style="padding-left: 64px;padding-right: 64px;margin-top: 10px;margin-bottom: 10px;">邮箱</button></a>
+
+        <a href="https://qm.qq.com/cgi-bin/qm/qr?k=Py4J_7rzKtzjIxYaH_Y5cW47RiyX8ig-&noverify=0"><button class="button smoke dark" style="padding-left: 59px;padding-right: 59px;">联系'QQ</button></a></center>
+
+    </div>
+
+    <footer>
+
+        <h3 style="color: #74FFFF;"><center>© 2021 <a href="https://jhxxr.github.io/jhxnb/" target="_blank" style="color: #8BB0FF;">星染 主页</a></center></h2>
+
+    </footer>
+
+<script>
+
+    $('.button').html((i, html) => {
+
+        return '<span><i>' + $.trim(html).split('').join('</i><i>') + '</i></span>';
+
+    });
+
+</script>
+
+<script src="https://myhkw.cn/api/player/1629894154106" id="myhk" key="1629894154106" m="1"></script></body>
+
+</html>
