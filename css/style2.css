@@ -1,0 +1,340 @@
+html {
+    height: 100%;
+}
+
+body {
+	background: rgb(236, 239, 252);
+    font-size: 12px;
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 80px; /* .footer 的高度，为 footer 占位 */
+}
+
+a {
+    text-decoration: none;
+}
+
+.button.dark {
+    --background: #2F3545;
+    --shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+    --shadow-hover: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+}
+.button.white {
+    --background: #673ab7;
+    --text: #fff;
+    --shadow: 0 2px 8px -1px rgba(103, 58, 183, 0.32);
+    --shadow-hover: 0 4px 20px -2px rgba(103, 58, 183, 0.5);
+}
+.button {
+    --background: #275efe;
+    --text: #fff;
+    --font-size: 16px;
+    --duration: .5s;
+    --move-hover: -4px;
+    --shadow: 0 2px 8px -1px rgba(39, 94, 254, 0.32);
+    --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, 0.5);
+    padding: 16px 32px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    line-height: var(--font-size);
+    border-radius: 24px;
+    display: block;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: var(--font-size);
+    letter-spacing: .5px;
+    background: var(--background);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    -webkit-transform: translateY(var(--y));
+    transform: translateY(var(--y));
+    transition: box-shadow var(--duration) ease, -webkit-transform var(--duration) ease;
+    transition: transform var(--duration) ease, box-shadow var(--duration) ease;
+    transition: transform var(--duration) ease, box-shadow var(--duration) ease, -webkit-transform var(--duration) ease;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+}
+.button span {
+    display: flex;
+}
+.button span i {
+    display: block;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    font-style: normal;
+}
+.button span i:nth-child(1) {
+    --d: 0.05s;
+}
+.button span i:nth-child(2) {
+    --d: 0.1s;
+}
+.button span i:nth-child(3) {
+    --d: 0.15s;
+}
+.button span i:nth-child(4) {
+    --d: 0.2s;
+}
+.button span i:nth-child(5) {
+    --d: 0.25s;
+}
+.button span i:nth-child(6) {
+    --d: 0.3s;
+}
+.button span i:nth-child(7) {
+    --d: 0.35s;
+}
+.button span i:nth-child(8) {
+    --d: 0.4s;
+}
+.button span i:nth-child(9) {
+    --d: 0.45s;
+}
+.button span i:nth-child(10) {
+    --d: 0.5s;
+}
+.button span i:nth-child(11) {
+    --d: 0.55s;
+}
+.button:hover {
+    --y: var(--move-hover);
+    --shadow: var(--shadow-hover);
+    --move: -4px;
+    --shadow-active: 0 3px 1px rgba(0, 0, 0, .2);
+}
+.button:hover i {
+    -webkit-animation: move var(--duration) linear var(--d);
+    animation: move var(--duration) linear var(--d);
+}
+.button.smoke {
+    --move: 12px;
+    --move-y: -8px;
+    --blur: 4px;
+}
+.button.smoke:hover i {
+    --duration: 1s;
+    -webkit-animation: smoke var(--duration) linear var(--d);
+    animation: smoke var(--duration) linear var(--d);
+}
+.button.drive {
+    --move: 16px;
+    --skew: 25deg;
+    --skew-fast: 40deg;
+    --skew-bounce: -12px;
+}
+.button.drive:hover i {
+    --duration: 1s;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-animation: drive var(--duration) linear var(--d);
+    animation: drive var(--duration) linear var(--d);
+}
+@-webkit-keyframes move {
+    40% {
+        -webkit-transform: translateY(var(--move));
+        transform: translateY(var(--move));
+        text-shadow: var(--shadow-active);
+    }
+}
+@keyframes move {
+    40% {
+        -webkit-transform: translateY(var(--move));
+        transform: translateY(var(--move));
+        text-shadow: var(--shadow-active);
+    }
+}
+@-webkit-keyframes smoke {
+    45%, 55% {
+        -webkit-filter: blur(var(--blur));
+        filter: blur(var(--blur));
+    }
+    50%,
+    50.1% {
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(var(--move)) translateY(var(--move-y));
+        transform: translateX(var(--move)) translateY(var(--move-y));
+    }
+    50.1% {
+        -webkit-transform: translateX(calc(var(--move) * -1));
+        transform: translateX(calc(var(--move) * -1));
+    }
+}
+@keyframes smoke {
+    45%, 55% {
+        -webkit-filter: blur(var(--blur));
+        filter: blur(var(--blur));
+    }
+    50%,
+    50.1% {
+        opacity: 0;
+    }
+    25%,
+    75% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(var(--move)) translateY(var(--move-y));
+        transform: translateX(var(--move)) translateY(var(--move-y));
+    }
+    50.1% {
+        -webkit-transform: translateX(calc(var(--move) * -1));
+        transform: translateX(calc(var(--move) * -1));
+    }
+}
+@-webkit-keyframes drive {
+    40% {
+        opacity: 1;
+    }
+    55% {
+        -webkit-transform: skewX(var(--skew)) translateX(var(--move));
+        transform: skewX(var(--skew)) translateX(var(--move));
+    }
+    56% {
+        -webkit-transform: skewX(var(--skew-fast)) translateX(calc(var(--move) * -1));
+        transform: skewX(var(--skew-fast)) translateX(calc(var(--move) * -1));
+    }
+    55%,
+    56% {
+        opacity: 0;
+    }
+    75% {
+        -webkit-transform: skewX(var(--skew));
+        transform: skewX(var(--skew));
+    }
+    85% {
+        -webkit-transform: skewX(var(--skew-bounce));
+        transform: skewX(var(--skew-bounce));
+    }
+}
+@keyframes drive {
+    40% {
+        opacity: 1;
+    }
+    55% {
+        -webkit-transform: skewX(var(--skew)) translateX(var(--move));
+        transform: skewX(var(--skew)) translateX(var(--move));
+    }
+    56% {
+        -webkit-transform: skewX(var(--skew-fast)) translateX(calc(var(--move) * -1));
+        transform: skewX(var(--skew-fast)) translateX(calc(var(--move) * -1));
+    }
+    55%,
+    56% {
+        opacity: 0;
+    }
+    75% {
+        -webkit-transform: skewX(var(--skew));
+        transform: skewX(var(--skew));
+    }
+    85% {
+        -webkit-transform: skewX(var(--skew-bounce));
+        transform: skewX(var(--skew-bounce));
+    }
+}
+html {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+* {
+    box-sizing: inherit;
+}
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+*:before{
+    background-image: linear-gradient(180deg,#cfcde4,#eaeaf3,#ffffff));
+}
+.lz {
+    font-family: 'Roboto', Arial;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.lz .button {
+    margin: 0 12px;
+}
+img {
+    border-radius: 10.25rem;
+    width: 4.25rem;
+    height: 4.25rem;
+    margin-bottom: 10px;
+}
+
+.btn a {
+    text-decoration: none;
+    border: 2px solid blueviolet;
+    padding: 5px;
+    color: #6f6f6f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.btn span{
+    letter-spacing: 4.5px;
+}
+span {
+    position: relative;
+    /* z-index coz when we put bg to before and after this span text will not be visible */
+    
+    z-index: 3;
+}
+/* Button 1 styles */
+
+.btn a::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -2px;
+    width: calc(100% + 6px);
+    /*100% plus double the times left values*/
+    
+    height: calc(100% - 10px);
+    background-color: #eceffc;
+    transition: all 0.5s ease-in-out;
+    transform: scaleY(1);
+}
+.btn a:hover::before {
+    transform: scaleY(0);
+}
+.btn a::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    width: calc(100% - 10px);
+    /*100% plus double the times left values*/
+    
+    height: calc(100% + 10px);
+    background-color: #eceffc;
+    transition: all 0.5s ease-in-out;
+    transform: scaleX(1);
+}
+/* Created by http://grohit.com/  */
+
+.btn a:hover::after {
+    transform: scaleX(0);
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+}
