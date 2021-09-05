@@ -14,9 +14,9 @@
 
     <title>星染 网页集合</title>
 
-    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css" />
 
-    <script src="static/js/jquery.js"></script>
+    <script src="jquery.js"></script>
 
 </head>
 
